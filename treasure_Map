@@ -1,0 +1,47 @@
+# first solution
+
+#--- split input string value in list ---
+
+xy_position = [int(i) for i in str(position)]
+
+print(xy_position)
+
+#--- select each value by the index in xy_position list ---
+
+X_point_position = xy_position[0]-1 # -1 => exact index list [0-1]
+
+print(X_point_position)
+
+Y_point_position = xy_position[1]-1
+
+print(Y_point_position )
+
+#--- Create treasure position with the input value ---
+
+treasure_postion = map[X_point_position][Y_point_position]
+curser_point = "X"
+
+#--- index selector 2D list: 
+# => [selected array(row)] [index in array(column)] 
+
+map[Y_point_position] = curser_point
+
+#--- make appeared treasure positon ---
+
+map.append(treasure_postion)
+
+🚨 Don't change the code below 👇
+print(f"{row1}\n{row2}\n{row3}")
+
+
+
+# second solution (Angela's solution)
+
+horizontal = int(position[0])
+vertical = int(position[1]
+
+selected_row = map[vertical-1]
+selected_row[horizontal-1] = "X"
+
+
+
