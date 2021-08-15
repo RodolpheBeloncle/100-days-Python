@@ -1,26 +1,43 @@
+#Step 2
 
 import random
+word_list = ["aardvark", "baboon", "camel"]
+chosen_word = random.choice(word_list)
 
-# Step 1
+#Testing code
+print(f'Pssst, the solution is {chosen_word}.')
 
-word_list = ["ardvark","baboon","camel"]
+#TODO-1: - Create an empty List called display.
+#For each letter in the chosen_word, add a "_" to 'display'.
+#So if the chosen_word was "apple", display should be ["_", "_", "_", "_", "_"] with 5 "_" representing each letter to guess.
 
-# TODO 1 - Randomly choose a word from the word_list and assign it to a variable called chosen_word
+display = []
+nb_letters = 0
 
-chosen_word = word_list[random.randint(0,len(word_list)-1)]
-print(chosen_word)
+for _ in chosen_word:
+  nb_letters += 1
+  display += "_"
+print(nb_letters)
+print(display)
 
-# TODO 2 - Ask the user to guess a letter and assign their answer to a variable called guess.Make guess lowerccase.
 
-guessed_user_letter = input("guess a letter ?:")
-guessedLetter_lowercase = guessed_user_letter.lower()
-print(guessedLetter_lowercase)
+guess = input("Guess a letter: ").lower()
 
-#TODO-3 - Check if the letter that the user guessed(guess) is one of the letters in the chosen_word.
-
+#TODO-2: - Loop through each position in the chosen_word;
+#If the letter at that position matches 'guess' then reveal that letter in the display at that position.
+#e.g. If the user guessed "p" and the chosen word was "apple", then display should be ["_", "p", "p", "_", "_"].
 for letter in chosen_word:
-  
-  if guessedLetter_lowercase.count(letter) > 0:
-    print("true")
-  else:
-    print("false")
+    
+    if letter == guess:
+        print("Right")
+        indexGuess = chosen_word.index(guess)
+        print(indexGuess)
+        display[indexGuess] = guess
+
+        print(display)
+
+    else:
+        print("Wrong")
+
+#TODO-3: - Print 'display' and you should see the guessed letter in the correct position and every other letter replace with "_".
+#Hint - Don't worry about getting the user to guess the next letter. We'll tackle that in step 3.
