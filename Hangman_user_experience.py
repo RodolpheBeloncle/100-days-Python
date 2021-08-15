@@ -36,9 +36,11 @@ while not end_of_game:
     letter_Already_Guess += guess
     print(letter_Already_Guess)
 
+    
     for alreadyAskLater in letter_Already_Guess:
-      if alreadyAskLater == guess:
-        print("You've already ask this letter")
+      if guess == alreadyAskLater and letter_Already_Guess.count(guess) > 1 :
+        print(f"You've already ask the {guess} letter")
+        guess
         break
     
     #Check guessed letter
