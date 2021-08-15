@@ -1,0 +1,26 @@
+
+import random
+
+# Step 1
+
+word_list = ["ardvark","baboon","camel"]
+
+# TODO 1 - Randomly choose a word from the word_list and assign it to a variable called chosen_word
+
+chosen_word = word_list[random.randint(0,len(word_list)-1)]
+print(chosen_word)
+
+# TODO 2 - Ask the user to guess a letter and assign their answer to a variable called guess.Make guess lowerccase.
+
+guessed_user_letter = input("guess a letter ?:")
+guessedLetter_lowercase = guessed_user_letter.lower()
+print(guessedLetter_lowercase)
+
+#TODO-3 - Check if the letter that the user guessed(guess) is one of the letters in the chosen_word.
+
+for letter in chosen_word:
+  
+  if guessedLetter_lowercase.count(letter) > 0:
+    print("true")
+  else:
+    print("false")
