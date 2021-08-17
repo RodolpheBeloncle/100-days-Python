@@ -21,3 +21,18 @@ def prime_checker(number):
 
       else: 
         x += 1 
+        
+# Angela's solution :
+
+  def prime_checker(number):
+    is_prime = True
+    
+    for i in range(2,number)
+      if number % i == 0:
+        is_prime = False
+      if is_prime:
+        # if it's clearly divisible with remains 0 
+        print("It's a prime number")
+      else:
+        print("It's not a prime number")
+      
