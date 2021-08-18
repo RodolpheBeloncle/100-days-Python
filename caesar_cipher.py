@@ -100,7 +100,7 @@ encrypt(plain_text=text, shift_amount=shift)
 def caesar (inputText,shiftCode,choice):
 
   if choice == "decode":
-    shiftCode = - shiftCode
+    shiftCode *= - shiftCode
 
   crypted_text = ""
   for letter in inputText :
