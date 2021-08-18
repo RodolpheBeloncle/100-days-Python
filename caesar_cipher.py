@@ -7,6 +7,7 @@ alphabet_list_size = len(alphabet)-1
 
 #TODO-1: Create a function called 'encrypt' that takes the 'text' and 'shift' as inputs.
 
+# ENCRYPT CODE
 
 def encrypt(input_text,input_shift):
 
@@ -47,6 +48,28 @@ def encrypt(input_text,input_shift):
         #-----------------------------------------
     
   print(f"{''.join(encrypted_word)}")
+  
+  # DECRYPT CODE
+  
+  def decrypt(textInput,shiftInput):
+  cipher_decrypt_text = ""
+
+  for eachLetter in textInput:
+    index = alphabet.index(eachLetter)
+    new_Index = index - shiftInput
+    cipher_decrypt_text += alphabet[new_Index]
+   print(f"The decrypt text is {cipher_decrypt_text}")
+
+
+  def test(choice):
+
+    if choice == "encode":
+      encrypt(plain_text=text, shift_amount=shift)
+
+    elif choice == "decode":
+     decrypt(text,shift)
+
+  test(direction)
   
   
   # --------------- Angela's solution ------------------
