@@ -92,3 +92,22 @@ def encrypt(plain_text, shift_amount):
 
 #TODO-3: Call the encrypt function and pass in the user inputs. You should be able to test the code and encrypt a message. 
 encrypt(plain_text=text, shift_amount=shift)
+
+
+# ---------- REFACTORING CODE ----------------
+
+
+def caesar (inputText,shiftCode,choice):
+
+  if choice == "decode":
+    shiftCode = - shiftCode
+
+  crypted_text = ""
+  for letter in inputText :
+    position = alphabet.index(letter)
+    new_position = position + shiftCode
+    crypted_text += alphabet[new_position]
+  print(f"The encoded text is {crypted_text}")
+
+
+caesar(text,shift,direction)
