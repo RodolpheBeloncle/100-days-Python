@@ -110,7 +110,8 @@ while not should_end:
   #Try running the program and entering a shift number of 45.
   #Add some code so that the program continues to work even if the user enters a shift number greater than 26. 
   #Hint: Think about how you can use the modulus (%).
-  shift = shift % 26
+  
+  shift = shift % 26 # => modulo straight on the input to avoid more code instead of if statement
 
   caesar(start_text=text, shift_amount=shift, cipher_direction=direction)
 
