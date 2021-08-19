@@ -111,3 +111,79 @@ def caesar (inputText,shiftCode,choice):
 
 
 caesar(text,shift,direction)
+
+# FINAL PROCESS WITH ERROR INPUT AND EXCEPTION
+
+# ----- Process --------------------
+
+continue_scripting = True
+
+error_syntaxe = False
+
+alphabet_size_list = len(alphabet)
+
+
+while continue_scripting:
+
+
+  def caesar(start_text, shift_amount, cipher_direction):
+
+    end_text = ""
+
+    if cipher_direction == "decode":
+      shift_amount *= -1
+
+
+    for char in start_text:
+
+    # exceptions or error inpout :
+
+      if char in alphabet == alphabet.index(" "):
+
+        end_text += " "
+        print("error input")
+        continue
+    
+    
+      elif char not in alphabet :
+        end_text += char
+        print("error input")
+        continue
+    
+      # if shift amount > 26 (list size alphabet)
+
+      if shift_amount > alphabet_size_list:
+
+        position = alphabet.index(char)
+        exception = alphabet_size_list % shift_amount
+        end_text += alphabet[exception]
+
+        new_position = alphabet[exception]
+
+
+      elif shift_amount <= alphabet_size_list:
+        position = alphabet.index(char)
+        new_position = position + shift_amount
+        end_text += alphabet[new_position]
+
+    print(f"Here's the {cipher_direction}d result: {end_text}")
+
+
+  direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+  text = input("Type your message:\n").lower()
+  shift = int(input("Type the shift number:\n"))
+
+
+
+  caesar(start_text=text, shift_amount=shift, cipher_direction=direction)
+ 
+  # while True restart or not 
+
+  restart = input("restart the cipher program? yes/no : ")
+
+  if restart == "no":
+    continue_scripting = False
+  elif restart == "yes":
+    continue_scripting
+  else :
+    print("Type yes or no !!!!")
