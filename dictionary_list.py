@@ -100,3 +100,34 @@ travel_log = [
   "total_visits": 5,
 },
 ]
+# Add dictionnary with list in nested list:
+
+travel_log = [
+{
+  "country": "France",
+  "visits": 12,
+  "cities": ["Paris", "Lille", "Dijon"]
+},
+{
+  "country": "Germany",
+  "visits": 5,
+  "cities": ["Berlin", "Hamburg", "Stuttgart"]
+},
+]
+
+def add_new_country(countryVisited,TimesVisited,visitedCities):
+
+  myNewList = {}
+
+  myNewList["country"] = countryVisited
+  myNewList["visits"] = TimesVisited
+  myNewList["cities"] = visitedCities
+
+  travel_log.append(myNewList)
+  for key in myNewList:
+    print(key)
+    print(myNewList[key])
+    
+    
+    add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
+print(travel_log)
