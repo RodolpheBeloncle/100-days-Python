@@ -1,3 +1,4 @@
+
 # calculator
 
 def add(n1,n2):
@@ -35,4 +36,4 @@ operation_symbol = input("Pick an operation from the line above: ")
 
 operation_process = operations[operation_symbol](num1,num2)
 
-print(operation_process)
+print(f"{num1}{operation_symbol}{num2} = {operation_process}")
