@@ -114,7 +114,7 @@ def final_Point_Checker(playerPts,dealerPts) :
 # --------------------------------------------
 
 
-  # user and dealer get 2 random cards
+  # user and dealer get 2 random cards (pick 2 random's cards for each user)
   
 for i in range(0,nb_distribution):
   user.append(random.choice(cards))
