@@ -14,7 +14,6 @@ user = []
 computer = []
 player_Points = 0
 computer_Points = 0
-anotherCard = True
 should_continue = True
 yes = "y"
 no = "n"
