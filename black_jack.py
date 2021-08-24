@@ -5,7 +5,7 @@ import functools
 from art import logo
 
 print(logo)
-# Data users
+# ----- Data users -----
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 nb_distribution = 2
@@ -18,7 +18,9 @@ anotherCard = True
 should_continue = True
 yes = "y"
 no = "n"
-#-----------------------------
+
+#------------------------------------
+# ----- Function Part ---------------
 
 def blackJack(userhand,dealerHand):
   if userhand.count(11)== 1 and userhand.count(10)== 1:
@@ -44,9 +46,8 @@ def pointsCheckerStart(playerPts,dealerPts):
     elif user.count(11) > 0 and (playerPts - 11)+1 > 21 :
       print("Player loose")
       return False
-
-  
-
+    
+    
   elif dealerPts > 21:
     if computer.count(11) > 1 and (dealerPts - 11)+1 <= 21  :
       dealerPts = (dealerPts - 11)+1
@@ -110,8 +111,8 @@ def final_Point_Checker(playerPts,dealerPts) :
     print(f"Player's points : {playerPts}")
     print("you win")
     
-  #--------------------------------------
-  #--------------------------------------
+# --------------------------------------------
+
 
   # user and dealer get 2 random cards
   
@@ -142,6 +143,7 @@ pointsCheckerStart(player_Points,computer_Points)
 
 
 while should_continue :
+  # player Turn
   answerOf = input("would you like to get another card ? y/n ") 
 
   if answerOf == yes:
@@ -153,14 +155,14 @@ while should_continue :
       should_continue = False 
     should_continue
       
-
+# dealer Turn
   elif answerOf == no and computer_Points < 17:
     computer_Points = computer_play("Dealer",computer,computer_Points)
     final_Point_Checker(player_Points,computer_Points)
     should_continue
 
 
-
+# End Of The party
   else:
     print(f"Player's hand: {user}")
     print(f"Player points : {player_Points}")
