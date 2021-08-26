@@ -131,3 +131,69 @@ def add_new_country(countryVisited,TimesVisited,visitedCities):
     
     add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
 print(travel_log)
+
+# exemple with higher_lower game
+
+from art import *
+from game_data import data
+import random
+
+
+
+
+nameList = []
+nbFollower = []
+descriptionList = []
+countryList = []
+count = 0
+
+for key in data:
+ nameList.append(key["name"])
+ nbFollower.append(key["follower_count"])
+ descriptionList.append(key["description"])
+ countryList.append(key["country"])
+
+
+def compareFunc(nameA,valA,nameB,valB):
+  if valA < valB:
+    answer = "B"
+    return answer.lower()
+  else:
+    answer = "A"
+    return answer.lower()
+
+
+play = True
+
+while play:
+  random_choice1 = random.randrange(0,len(data))
+  random_choice2 = random.randrange(0,len(data))
+
+   
+  VALUE_A = [nameList[random_choice1],descriptionList[random_choice1],countryList[random_choice1],nbFollower[random_choice1]] 
+
+  VALUE_B = [nameList[random_choice2],descriptionList[random_choice2],countryList[random_choice2],nbFollower[random_choice2]]
+
+  print(logo)
+
+  print(f"Compare A : { VALUE_A[0]} , a { VALUE_A[1] } , from { VALUE_A[2] } ")
+ 
+  print(vs)
+
+  print(f"Against B : { VALUE_B[0] } , a { VALUE_B[1] } , from { VALUE_B[2] } ")
+
+  question = input("who has more followers? type A or B : ").lower()
+  
+
+  if question == compareFunc(VALUE_A[0],VALUE_A[-1],{VALUE_B[0]},VALUE_B[-1]):
+    count += 1
+    print(f"You won 1 , Total points {count}")
+    print(f"{VALUE_A[0]} a {VALUE_A[-1]} , {VALUE_B[0]} a {VALUE_B[-1]}")
+    print("Continue")
+    play = True
+  else:
+    print("you loose")
+    print(f"{VALUE_A[0]} a {VALUE_A[-1]} , {VALUE_B[0]} a {VALUE_B[-1]}")
+    print("end of the game")
+    play = False
+ 
